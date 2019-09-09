@@ -5,13 +5,14 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: `http://wpnext.local`,
+        baseUrl: `ryanbott.wordpress.com`,
         protocol: `http`,
-        hostingWPCOM: false,
+        hostingWPCOM: true,
         useACF: true,
       }
     },

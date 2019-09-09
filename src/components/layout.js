@@ -20,13 +20,6 @@ const Layout = ({ children }) => {
           title
         }
       }
-      wordpressWpApiMenusMenusItems(slug: {eq: "main-menu"}) {
-        items {
-          title
-          object_slug
-          object_id
-        }
-      }
     }
   `)
 
@@ -34,7 +27,6 @@ const Layout = ({ children }) => {
     <>
       <Header
         siteTitle={data.site.siteMetadata.title}
-        menu={data.wordpressWpApiMenusMenusItems.items}
       />
       <div
         style={{
