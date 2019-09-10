@@ -4,16 +4,11 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import styled from 'styled-components'
 
-const HomeBlogSection = styled.div`
+const BlogSection = styled.div`
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-
-  & > * {
-    width: 48%;
-  }
-
-
 `;
 
 const BlogPost = styled.article`
@@ -36,7 +31,7 @@ const BlogPost = styled.article`
 `;
 
 
-class Home extends Component {
+class Blog extends Component {
   render() {
     const data = this.props.data
 
@@ -44,7 +39,7 @@ class Home extends Component {
       <Layout>
         <hr />
         <h1>Recent Posts</h1>
-        <HomeBlogSection>
+        <BlogSection>
           {data.allWordpressPost.edges.map(({ node }) => (
 
             <BlogPost key={node.slug}>
@@ -58,17 +53,17 @@ class Home extends Component {
               </Link>
             </BlogPost>
           ))}
-        </HomeBlogSection>
+        </BlogSection>
 
       </Layout>
     )
   }
 }
 
-export default Home
+export default Blog
 
 // Set here the ID of the home page.
-export const pageQuery = graphql`
+export const blogQuery = graphql`
   query {
     allWordpressPost(sort: { fields: [date] }) {
       edges {

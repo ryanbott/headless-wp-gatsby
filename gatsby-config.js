@@ -1,12 +1,14 @@
 module.exports = {
   siteMetadata: {
     title: `WP Headless Gatsby`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Headless WordpPress CMS test with Gatsby`,
+    author: `@ryanbott`,
   },
   plugins: [
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-image`,
     {
       resolve: `gatsby-source-wordpress`,
       options: {
